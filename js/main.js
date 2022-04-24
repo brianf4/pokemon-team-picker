@@ -1,5 +1,5 @@
 document.querySelector('.searchButton').addEventListener('click', getFetch)
-
+document.querySelector('#random').addEventListener('click', getRandomButton)
 
 
 function getFetch(){
@@ -27,12 +27,34 @@ function getFetch(){
  
 }
 
-// fetch('https://pokeapi.co/api/v2/pokemon/seel')
-//   .then(res => res.json()) // parse response as JSON
-//   .then(data => {
-//     console.log(data.stats)
-//     console.log(data.stats.reduce((sum, current) => sum + current.base_stat, 0))
-//   })
-//   .catch(err => {
-//       console.log(`error ${err}`)
-//   });
+
+function getRandomButton(){
+  
+  getRandomPokemon(0) 
+
+}
+
+function getRandomPokemon(attempt = 0){
+  console.log(attempt)
+  if (attempt > 3){
+    console.log('Max attempt reach')
+    return 
+  }
+  fetch(`https://pokeapi.co/api/v2/pokemon/`)
+  .then(res => res.json()) // parse response as JSON
+  .then(data => {
+    //console.log(data)
+    const randomPokemonNum = Math.floor(Math.random() * data.count)
+    return fetch(`https://pokeapi.co/api/v2/pokemon/${randomPokemonNum}`)
+    .then(res => res.json())
+  })
+  .then(pokeInfo => {
+    //console.log(pokeInfo)
+    document.querySelector('#randomPokemonPic').src = pokeInfo.sprites.front_default
+  }) 
+  .catch(err => {
+      console.log(`error ${err}`)
+      getRandomPokemon(attempt + 1)
+  });
+}
+
