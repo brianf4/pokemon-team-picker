@@ -36,13 +36,15 @@ main {
 }
 main div {
      border: 2px solid lightgreen;
-     height: 100px;
+     height: 175px;
      width: 15%;
 }
 
-header {
-
+h2 {
+     font-size: 1.8rem;
 }
+
+
 
 footer {
      display: flex;
@@ -52,6 +54,8 @@ footer {
 footer section {
      border: 2px solid black;
      width: 25%;
+     margin-top: 10%;
+     padding: 4rem;
 }
 
 footer img {
@@ -61,10 +65,10 @@ footer img {
 .action {
      display: flex;
      justify-content: center;
-     column-gap: 30px;
+     column-gap: 10rem;
 }
 
-h2 {
+h1, h2, h3 {
      text-align: center;
 }
 
@@ -76,10 +80,23 @@ h2 {
 .stat-table figure{
      border: 2px solid black;
 }
+
+input {
+     padding: .3rem 0;
+     border-radius: .5rem;
+     border: 2px solid black;
+     font-size: 2rem;
+     text-align: center;
+}
+
+button {
+     font-size: 2rem;
+     padding: 0 2rem;
+}
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
 .add {
      display: block;
-     margin: auto;
+     margin: 6rem auto 0 auto;
 }
