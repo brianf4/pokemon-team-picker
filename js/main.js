@@ -1,6 +1,8 @@
 document.querySelector('.searchButton').addEventListener('click', getFetch)
 document.querySelector('#random').addEventListener('click', getRandomButton)
+document.querySelector('.add').addEventListener('click', addPokemon)
 
+let index = 0;
 
 function getFetch(){
   const choice = document.querySelector('input').value
@@ -9,7 +11,7 @@ function getFetch(){
   fetch(url)
   .then(res => res.json()) // parse response as JSON
   .then(data => {
-    document.querySelector('#pokemonSearch').src = data.sprites.front_default
+    document.querySelector('#pokemonSearch').src = data.sprites.other["official-artwork"].front_default
     document.querySelector('.hp-stat').innerText = data.stats[0].base_stat
     document.querySelector('.attack-stat').innerText = data.stats[1].base_stat
     document.querySelector('.defense-stat').innerText = data.stats[2].base_stat
@@ -21,10 +23,16 @@ function getFetch(){
   .catch(err => {
       console.log(`error ${err}`)
   });
-  
  
 }
 
+
+function addPokemon(){
+  let pokemonName =  document.querySelector('h4').innerText;
+  document.querySelector(`#poke${index}>h4`).innerText = document.querySelector('#pokemonName').innerText
+  console.log(pokemonName)
+  pointer++
+}
 
 function getRandomButton(){
   
@@ -47,7 +55,6 @@ function getRandomPokemon(attempt = 0){
     .then(res => res.json())
   })
   .then(pokeInfo => {
-    //console.log(pokeInfo)
     document.querySelector('#randomPokemonPic').src = pokeInfo.sprites.front_default
   }) 
   .catch(err => {

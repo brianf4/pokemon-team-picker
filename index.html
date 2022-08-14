@@ -11,37 +11,40 @@
 		<!-- external CSS link -->
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/style.css">
+		<script src="https://kit.fontawesome.com/f26a330007.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<h1>Pick your pokemon team</h1>
 		<main>
-			<div>
+			<div id="poke0">
+				<i class="fa-solid fa-x xmark"></i>
+				<h4></h4>
+				<img id="pic0" src="" alt="">
+			</div>
+			<div id="poke1">
 				<img id="pic1" src="" alt="">
 			</div>
-			<div>
+			<div id="poke2">
 				<img id="pic2" src="" alt="">
 			</div>
-			<div>
+			<div id="poke3">
 				<img id="pic3" src="" alt="">
 			</div>
-			<div>
+			<div id="poke4">
 				<img id="pic4" src="" alt="">
 			</div>
-			<div>
+			<div id="poke5">
 				<img id="pic5" src="" alt="">
-			</div>
-			<div>
-				<img id="pic6" src="" alt="">
 			</div>
 		</main>
 		<footer>
-			<section>
+			<section class="lookForPokemon">
 				<h2>Look for a pokemon</h2>
 				<div class="action">
 					<input type="text">
 					<button class="searchButton">Search</button>
 				</div>
-				<h3></h3>
+				<h3 id="pokemonName"></h3>
 				<div class="stat-table">
 					<figure>
 						<img id="pokemonSearch" src="" alt="">
@@ -73,7 +76,7 @@
 				</div>
 				<button class="add">Add</button>
 			</section>
-			<section>
+			<section class="randomPokemon">
 				<h2>Random Suggester</h2>
 				<div class="action">
 					<button id="random">Random</button>
@@ -114,5 +117,6 @@
 		
 		
 		<script type="text/javascript" src="js/main.js"></script>
+		
 	</body>
 </html>

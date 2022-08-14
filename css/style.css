@@ -34,10 +34,12 @@ main {
      display: flex;
      justify-content: center;
 }
+
 main div {
      border: 2px solid lightgreen;
-     height: 175px;
+     height: 200px;
      width: 15%;
+     padding: 1rem;
 }
 
 h2 {
@@ -55,7 +57,7 @@ footer section {
      border: 2px solid black;
      width: 25%;
      margin-top: 10%;
-     padding: 4rem;
+     padding: 2rem;
 }
 
 footer img {
@@ -65,20 +67,28 @@ footer img {
 .action {
      display: flex;
      justify-content: center;
-     column-gap: 10rem;
+     column-gap: 2rem;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
      text-align: center;
+}
+
+h3 {
+     font-size: 1.8rem;
 }
 
 .stat-table {
      display: flex;
-     justify-content: center;
+     justify-content: space-between;
 }
 
 .stat-table figure{
      border: 2px solid black;
+}
+
+#pokemonSearch {
+     width: 100%;
 }
 
 input {
@@ -99,4 +109,11 @@ button {
 .add {
      display: block;
      margin: 6rem auto 0 auto;
+}
+
+.xmark {
+     font-size: 1.4rem;
+     font-weight: 700;
+     text-align: right;
+     width: 100%;
 }
